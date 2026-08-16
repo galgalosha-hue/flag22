@@ -8,6 +8,7 @@ pygame.display.set_caption('flag')
 window.fill(green)
 pygame.display.flip()
 mine = pygame.image.load('mine.png')
+
 running = True
 while running:
     for event in pygame.event.get():
