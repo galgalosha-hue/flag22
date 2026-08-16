@@ -31,3 +31,5 @@ for time in range(22):
     GRASS_PLACMENT_Y = random.randrange(0, 240)
     GRASS_PLACMENT = (GRASS_PLACMENT_X, GRASS_PLACMENT_Y)
     GRASS_LIST.append(GRASS_PLACMENT)
+
+TILE_SIZE = 10
