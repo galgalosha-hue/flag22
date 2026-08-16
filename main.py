@@ -3,6 +3,7 @@ import consts
 import game_field
 import screen
 import soldier
+import time
 
 '''state = {
     "original_arrow": Screen.create_arrow(consts.ARROW_IMG),
@@ -31,6 +32,13 @@ def main():
 
         handle_user_events()
 
+        if is_lose():
+            state["state"] = consts.LOSE_STATE
+            time.sleep(3)
+        elif is_win():
+            state["state"] = consts.WIN_STATE
+            time.sleep(3)
+
 def handle_user_events():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -44,11 +52,31 @@ def handle_user_events():
             elif key not in consts.KEYS:
                 pass
             else:
+                game_field.get_legs_location()
                 handle_user_button(key)
 
 def handle_user_button(key):
-    if key == pygame.K_LEFT:
-    elif key == pygame.K_RIGHT:
-    elif key == pygame.K_UP:
+    while not contanting with the window:
+        if key == pygame.K_LEFT:
+            decrease both cols
+        elif key == pygame.K_RIGHT:
+            increse both cols
+        elif key == pygame.K_UP:
+            decrese both rows
+        else:
+            increse both rows
     else:
+        pass
+
+
+def handle_user_enter():
+
+def is_touching_flag():
+
+def is_touching_mine():
+
+
+def is_lose():
+
+def is_win():
 
