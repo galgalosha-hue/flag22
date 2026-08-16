@@ -15,3 +15,4 @@ def random_mines(game_field):
         rndm_num_2 = random.randint(1, consts.NUM_OF_COLS)
         game_field[rndm_num_1][rndm_num_2] = "X"
 
+
