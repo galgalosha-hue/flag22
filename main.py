@@ -5,6 +5,8 @@ import screen
 import soldier
 import time
 
+from soldier import calc_whole_soldier
+
 '''state = {
     "original_arrow": Screen.create_arrow(consts.ARROW_IMG),
     "rotated_arrow": None,
@@ -30,16 +32,16 @@ def main():
 
     while state["is_window_open"]:
 
-        '''handle_user_events()
+        handle_user_events()
 
         if is_lose():
             state["state"] = consts.LOSE_STATE
             time.sleep(3)
         elif is_win():
             state["state"] = consts.WIN_STATE
-            time.sleep(3)'''
+            time.sleep(3)
 
-'''def handle_user_events():
+def handle_user_events():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             state["is_window_open"] = False
@@ -56,24 +58,39 @@ def main():
                 handle_user_button(key)
 
 def handle_user_button(key):
-    while not contanting with the window:
-        if key == pygame.K_LEFT:
-            decrease both cols
-        elif key == pygame.K_RIGHT:
-            increse both cols
-        elif key == pygame.K_UP:
-            decrese both rows
-        else:
-            increse both rows
+    whole_soldier = calc_whole_soldier(game_field)
+    if key == pygame.K_LEFT:
+        #if at least one column of his body == 0 THEN DON'T
+        #else:
+        soldier.move_left(whole_soldier)
+    elif key == pygame.K_RIGHT:
+        # if at least one column of his body == 24 THEN DON'T
+        # else:
+        soldier.move_right(whole_soldier)
+    elif key == pygame.K_UP:
+        # if at least one row of his body == 0 THEN DON'T
+        # else:
+        soldier.move_up(whole_soldier)
     else:
-        pass
+        # if at least one row of his body == 49 THEN DON'T
+        # else:
+        soldier.move_down(whole_soldier)
+
 
 
 def handle_user_enter():
 
 def is_touching_flag():
+    body = soldier.calc_body(game_field)
+    for i in body:
+        for j in range (len(body[i])):
+            if body[i][j] ==
 
-def is_touching_mine():'''
+'''def is_touching_mine(game_field):
+    soldier.calc_legs(game_field)
+    for i in range(len(game_field)):
+        for j in game_field[i]:'''
+
 
 
 '''def is_lose():

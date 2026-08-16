@@ -11,6 +11,7 @@ NUM_OF_MINES = 20
 EMPTY = "_"
 FLAG = "F"
 MINE = "X"
+SOLDIER = "S"
 
 KEYS = ["up", "down", "left", "right"]
 

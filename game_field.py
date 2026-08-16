@@ -6,7 +6,7 @@ def create():
     for i in range (consts.NUM_OF_ROWS):
         game_field.append([])
         for j in range (consts.NUM_OF_COLS):
-            game_field[i].append("_")
+            game_field[i].append(consts.EMPTY)
     random_mines(game_field)
     flag_in_field(game_field)
     return game_field
@@ -18,14 +18,16 @@ def random_mines(game_field):
         while 21 <= rndm_num_1 <=23 and 46 <= rndm_num_2 <=49:
             continue
         else:
-            game_field[rndm_num_1][rndm_num_2] = "X"
+            game_field[rndm_num_1][rndm_num_2] = consts.MINE
 
 def flag_in_field(game_field):
     for i in range(consts.NUM_OF_MINES):
         for j in range(consts.NUM_OF_COLS):
             if 21 <= i <=23 and 46 <= j <= 49:
-                game_field[i][j] = "F"
+                game_field[i][j] = consts.FLAG
             else:
                 pass
+
+
 
 #def get_legs_location():
