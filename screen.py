@@ -1,17 +1,19 @@
 import pygame
-
+import consts
 pygame.init()
 
-window = pygame.display.set_mode((500, 250))
-pygame.display.set_caption('flag')
+def display():
+    window = pygame.display.set_mode(DISPLAY_SIZE)
+    pygame.display.set_caption('flag')
+    window.fill(consts.BACKGROUND_COLOR)
+    pygame.display.flip()
+    return window
 
-window.fill(green)
-pygame.display.flip()
-mine = pygame.image.load('mine.png')
+def draw_grass(window):
+    for bush in range(20):
+        grass = pygame.image.load('grass.png')
+        grass = pygame.transform.scale(grass, GRASS_SIZE)
+        window.blit(grass, GRASS_PLACMENT)
+    pygame.display.flip()
+    return grass
 
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-pygame.quit() #
