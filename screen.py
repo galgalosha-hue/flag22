@@ -8,7 +8,6 @@ def display():
     window.fill(consts.BACKGROUND_COLOR)
     pygame.display.flip()
     return window
-
 def draw_grass(window):
     for bush in range(20):
         grass = pygame.image.load('grass.png')
