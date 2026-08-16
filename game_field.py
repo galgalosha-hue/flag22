@@ -14,3 +14,4 @@ def random_mines:
     rndm_num = random.randint(1, consts.NUM_OF_ROWS)
     for i in range(NUM_OF_MINES):
 
+
