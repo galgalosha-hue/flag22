@@ -33,3 +33,5 @@ for time in range(22):
     GRASS_LIST.append(GRASS_PLACMENT)
 
 TILE_SIZE = 10
+
+mines = []

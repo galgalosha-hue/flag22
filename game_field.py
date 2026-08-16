@@ -12,7 +12,6 @@ def create():
     return game_field
 
 def random_mines(game_field):
-    mines = []
     for i in range(consts.NUM_OF_MINES):
         rndm_num_1 = random.randint(1, consts.NUM_OF_ROWS-1)
         rndm_num_2 = random.randint(1, consts.NUM_OF_COLS-1)
@@ -20,8 +19,7 @@ def random_mines(game_field):
             continue
         else:
             game_field[rndm_num_1][rndm_num_2] = consts.MINE
-            mines.append((rndm_num_1*10, rndm_num_2*10))
-    return mines
+            consts.mines.append((rndm_num_2*10, rndm_num_1*10))
 
 def flag_in_field(game_field):
     for i in range(consts.NUM_OF_MINES):
