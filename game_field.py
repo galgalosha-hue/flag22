@@ -28,5 +28,4 @@ def flag_in_field(game_field):
             else:
                 pass
 
-def get_legs_location():
-
+#def get_legs_location():

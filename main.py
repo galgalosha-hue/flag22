@@ -30,16 +30,16 @@ def main():
 
     while state["is_window_open"]:
 
-        handle_user_events()
+        '''handle_user_events()
 
         if is_lose():
             state["state"] = consts.LOSE_STATE
             time.sleep(3)
         elif is_win():
             state["state"] = consts.WIN_STATE
-            time.sleep(3)
+            time.sleep(3)'''
 
-def handle_user_events():
+'''def handle_user_events():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             state["is_window_open"] = False
@@ -73,10 +73,10 @@ def handle_user_enter():
 
 def is_touching_flag():
 
-def is_touching_mine():
+def is_touching_mine():'''
 
 
-def is_lose():
+'''def is_lose():
 
-def is_win():
+def is_win():'''
 

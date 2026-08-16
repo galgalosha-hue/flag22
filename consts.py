@@ -1,4 +1,5 @@
 import random
+
 RUNNING_STATE = 1
 LOSE_STATE = 2
 WIN_STATE = 3
@@ -7,9 +8,18 @@ NUM_OF_ROWS = 25
 NUM_OF_COLS = 50
 NUM_OF_MINES = 20
 
+EMPTY = "_"
+FLAG = "F"
+MINE = "X"
+
 KEYS = ["up", "down", "left", "right"]
 
 BACKGROUND_COLOR = (00 ,33 ,00)
 DISPLAY_SIZE = (500, 250)
 GRASS_SIZE = (30, 10)
+GRASS_PLACMENT_X =  random.randrange(0, 470)
+GRASS_PLACMENT_Y = random.randrange(0, 240)
+GRASS_PLACMENT = (GRASS_PLACMENT_X, GRASS_PLACMENT_Y)
 
+SOLDIER_SIZE = (20, 60)
+SOLDIER_PLACMENT = (0, 0)
