@@ -2,4 +2,10 @@ RUNNING_STATE = 1
 LOSE_STATE = 2
 WIN_STATE = 3
 
+NUM_OF_ROWS = 25
+NUM_OF_COLS = 50
+NUM_OF_MINES = 20
+
 KEYS = ["up", "down", "left", "right"]
+
+BACKGROUND_COLOR = (00,33,00)

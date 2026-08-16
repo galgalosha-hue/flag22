@@ -25,8 +25,8 @@ state = {
 
 def main():
     pygame.init()
-    #game_field.create()
-    print(game_field.create())
+    game_field.create()
+
     while state["is_window_open"]:
 
         handle_user_events()
