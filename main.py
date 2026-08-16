@@ -32,16 +32,18 @@ def main():
 
     while state["is_window_open"]:
 
-        handle_user_events()
+        #handle_user_events()
 
-        if is_lose():
+        screen.draw_game(state)
+
+        '''if is_lose():
             state["state"] = consts.LOSE_STATE
             time.sleep(3)
         elif is_win():
             state["state"] = consts.WIN_STATE
-            time.sleep(3)
+            time.sleep(3)'''
 
-def handle_user_events():
+'''def handle_user_events():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             state["is_window_open"] = False
@@ -55,9 +57,9 @@ def handle_user_events():
                 pass
             else:
                 game_field.get_legs_location()
-                handle_user_button(key)
+                handle_user_button(key)'''
 
-def handle_user_button(key):
+'''def handle_user_button(key):
     whole_soldier = calc_whole_soldier(game_field)
     if key == pygame.K_LEFT:
         #if at least one column of his body == 0 THEN DON'T
@@ -74,26 +76,34 @@ def handle_user_button(key):
     else:
         # if at least one row of his body == 49 THEN DON'T
         # else:
-        soldier.move_down(whole_soldier)
+        soldier.move_down(whole_soldier)'''
 
 
 
-def handle_user_enter():
+#def handle_user_enter():
 
-def is_touching_flag():
+'''def is_touching_flag():
     body = soldier.calc_body(game_field)
     for i in body:
         for j in range (len(body[i])):
             if body[i][j] ==
 
-'''def is_touching_mine(game_field):
+def is_touching_mine(game_field):
     soldier.calc_legs(game_field)
     for i in range(len(game_field)):
-        for j in game_field[i]:'''
+        for j in game_field[i]:
 
 
+def is_lose():
+    if is_touching_mine(game_field):
+        return True
+    else:
+        return False
+        
+def is_win():
+    if is_touching_flag(game_field):
+        return True
+    else:
+        return False'''
 
-'''def is_lose():
-
-def is_win():'''
-
+main()
