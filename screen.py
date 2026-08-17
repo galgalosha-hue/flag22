@@ -13,7 +13,10 @@ def display():
     window = pygame.display.set_mode(consts.DISPLAY_SIZE)
     pygame.display.set_caption('flag')
     window.fill(consts.BACKGROUND_COLOR)
-    pygame.display.flip()
+    pygame.display.flip() #here?
+    draw_grass(window)
+    draw_flag(window)
+    draw_soldier(window)
     return window
 
 
@@ -31,21 +34,21 @@ while window:
         if event.type == pygame.QUIT:
             window = False'''
 
-def draw_grid(TILE_SIZE, window):
-    for x in range(TILE_SIZE, SCREENWIDTH, TILE_SIZE):
-        pygame.draw.line(window, consts.BACKGROUND_COLOR, (x, 0), (x, 250))
+def draw_grid(dark_window):
+    for x in range(consts.TILE_SIZE, SCREENWIDTH, consts.TILE_SIZE):
+        pygame.draw.line(dark_window, consts.BACKGROUND_COLOR, (x, 0), (x, 250))
 
-    for y in range(TILE_SIZE, SCREENHEIGHT, TILE_SIZE):
-        pygame.draw.line(window, consts.BACKGROUND_COLOR, (0, y), (500, y))
+    for y in range(consts.TILE_SIZE, SCREENHEIGHT, consts.TILE_SIZE):
+        pygame.draw.line(dark_window, consts.BACKGROUND_COLOR, (0, y), (500, y))
 
     pygame.display.update()
     return
 
-def draw_mines(window):
+def draw_mines(dark_window):
     mine = pygame.image.load('mine.png')
     mine = pygame.transform.scale(mine, consts.GRASS_SIZE)
     for index in consts.mines:
-        window.blit(mine, index)
+        dark_window.blit(mine, index)
         pygame.display.update()
     return
 
@@ -69,11 +72,21 @@ def draw_soldier(window):
 
 
 
-def draw_night_soldier(window):
+def draw_night_soldier(dark_window):
     night_soldier = pygame.image.load('soldier_nigth.png')
     night_soldier = pygame.transform.scale(night_soldier, consts.SOLDIER_SIZE)
-    window.blit(night_soldier, consts.SOLDIER_PLACMENT)
+    dark_window.blit(night_soldier, consts.SOLDIER_PLACMENT)
     return
+
+def dark_mode():
+    dark_window = pygame.display.set_mode(consts.DISPLAY_SIZE)
+    pygame.display.set_caption('flag')
+    dark_window.fill(consts.BC_DARK)
+    pygame.display.flip() #here?
+    draw_grid(dark_window, )
+    draw_mines(dark_window)
+    draw_night_soldier(dark_window)
+    return window
 
 
 
