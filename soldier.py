@@ -24,6 +24,7 @@ def leg_placment():
      right_leg = (s_x+20, s_y+40)
      return left_leg, right_leg
 
+
 def soldier_body():
     s_x = consts.SOLDIER_PLACMENT_X
     s_y = consts.SOLDIER_PLACMENT_Y
