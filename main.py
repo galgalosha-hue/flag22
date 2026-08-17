@@ -58,27 +58,20 @@ def handle_user_events():
             elif key not in consts.KEYS:
                 pass
             else:
-                game_field.get_legs_location()
                 handle_user_button(key)
 
 def handle_user_button(key):
     whole_soldier = calc_whole_soldier(game_field)
-    if key == pygame.K_LEFT:
-        #if at least one column of his body == 0 THEN DON'T
-        #else:
+    if key == pygame.K_LEFT and consts.SOLDIER_PLACMENT_X > 0:
         soldier.move_left(whole_soldier)
-    elif key == pygame.K_RIGHT:
-        # if at least one column of his body == 24 THEN DON'T
-        # else:
-        soldier.move_right(whole_soldier)
-    elif key == pygame.K_UP:
-        # if at least one row of his body == 0 THEN DON'T
-        # else:
-        soldier.move_up(whole_soldier)
+    elif key == pygame.K_RIGHT and consts.SOLDIER_PLACMENT_X+20 < 500:
+            soldier.move_right(whole_soldier)
+    elif key == pygame.K_UP and consts.SOLDIER_PLACMENT_Y > 0:
+            soldier.move_up(whole_soldier)
+    elif key == pygame.K_DOWN and consts.SOLDIER_PLACMENT_Y+40 < 250:
+            soldier.move_down(whole_soldier)
     else:
-        # if at least one row of his body == 49 THEN DON'T
-        # else:
-        soldier.move_down(whole_soldier)
+        pass
 
 
 def handle_user_enter():

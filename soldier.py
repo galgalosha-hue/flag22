@@ -46,24 +46,26 @@ def calc_whole_soldier(game_field):
                 whole_soldier.append([i, j])
     return whole_soldier
 
-#def is_good_to_move():
-
 def move_right(whole_soldier):
     for i in range(len(whole_soldier)):
         for j in range(2):
             whole_soldier[i][j] = whole_soldier[i][j] + 1
+    consts.SOLDIER_PLACMENT_X += consts.STEP
 
 def move_left(whole_soldier):
     for i in range(len(whole_soldier)):
         for j in range(2):
             whole_soldier[i][j] = whole_soldier[i][j] - 1
+    consts.SOLDIER_PLACMENT_X -= consts.STEP
 
 def move_up(whole_soldier):
     for i in range(len(whole_soldier)):
         for j in range(1):
             whole_soldier[i][j] = whole_soldier[i][j] - 1
+    consts.SOLDIER_PLACMENT_Y -= consts.STEP
 
 def move_down(whole_soldier):
     for i in range(len(whole_soldier)):
         for j in range(1):
             whole_soldier[i][j] = whole_soldier[i][j] + 1
+    consts.SOLDIER_PLACMENT_Y += consts.STEP
