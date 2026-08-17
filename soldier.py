@@ -17,7 +17,21 @@ def place_soldier(game_field):
             else:
                 pass
 
+def leg_placment():
+     s_x = consts.SOLDIER_PLACMENT_X
+     s_y = consts.SOLDIER_PLACMENT_Y
+     left_leg = (s_x, s_y+40)
+     right_leg = (s_x+20, s_y+40)
+     return left_leg, right_leg
 
+def soldier_body():
+    s_x = consts.SOLDIER_PLACMENT_X
+    s_y = consts.SOLDIER_PLACMENT_Y
+    head_left = (s_x, s_y)
+    head_right = (s_x+20, s_y)
+    tummy_left = (s_x, s_y+20)
+    tummy_right = (s_x+20, s_y+20)
+    return head_left, head_right, tummy_left, tummy_right
 
 def move_right(whole_soldier):
     for i in range(len(whole_soldier)):
