@@ -58,6 +58,13 @@ def draw_soldier(window):
     soldier = pygame.image.load('soldier.png')
     soldier = pygame.transform.scale(soldier, consts.SOLDIER_SIZE)
     window.blit(soldier, consts.SOLDIER_PLACMENT)
+    return
+
+def draw_explosion(window):
+    explosion = pygame.image.load('soldier.png')
+    soldier = pygame.transform.scale(soldier, consts.SOLDIER_SIZE)
+    window.blit(soldier, consts.SOLDIER_PLACMENT)
+    return
 
 
 
