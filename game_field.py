@@ -29,7 +29,7 @@ def flag_in_field(game_field):
             else:
                 pass
 
-def calc_body(game_field):
+def find_body(game_field):
     count = 0
     body = []
     while count <= 6:
@@ -40,7 +40,7 @@ def calc_body(game_field):
                     count += 1
     return body
 
-def calc_legs():
+def find_legs(game_field):
     count = 0
     legs = []
     for i in range(consts.NUM_OF_MINES):
@@ -50,7 +50,7 @@ def calc_legs():
                 legs.append([i, j])
     return legs
 
-def calc_whole_soldier(game_field):
+def find_whole_soldier(game_field):
     whole_soldier = []
     for i in range(consts.NUM_OF_MINES):
         for j in range(consts.NUM_OF_COLS):
