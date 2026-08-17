@@ -75,21 +75,30 @@ def handle_user_enter():
     #show other screen for 1 second
 
 def is_touching_flag():
-    #if body in indexes at the same row as flags but the column is -1
-    #if body indexes (x,y) == flag placement
-    body = game_field.find_body(game_field)
+    #if body in indexes at the same row as flags but the column is -1:
+    '''body = game_field.find_body(game_field)
     for i in range(len(body)):
         if i%2 != 0:
             for j in range(len(body[i])):
                 if j == 0:
-                    if
+                    if'''
+    #if body indexes (x,y) == flag placement:
+    for i in soldier.soldier_body():
+        if i == consts.FLAG_PLACMENT:
+            return True
+    return False
 
 def is_touching_mine(game_field):
-    #if leg column is -1 or +1 of the mines OR the column is the same and the row is -1
-    #if leg indexes (x,y) == mine placement
-    game_field.calc_legs(game_field)
+    #if leg column is -1 or +1 of the mines OR the column is the same and the row is -1:
+    '''game_field.calc_legs(game_field)
     for i in range(len(game_field)):
-        for j in game_field[i]:
+        for j in game_field[i]:'''
+    #if leg indexes (x,y) == mine placement:
+    for i in soldier.leg_placment():
+        for j in consts.mines:
+            if i == j:
+                return True
+    return False
 
 
 def is_lose():
@@ -99,7 +108,7 @@ def is_lose():
         return False
         
 def is_win():
-    if is_touching_flag(game_field):
+    if is_touching_flag():
         return True
     else:
         return False
