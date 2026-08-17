@@ -86,7 +86,7 @@ def handle_user_button(key):
 
 def handle_user_enter():
     #show other screen for 1 second
-    pygame.time.set_timer(screen.dark_mode(), 1000)
+    screen.dark_mode()
 
 def is_touching_flag():
     #if body in indexes at the same row as flags but the column is -1:
