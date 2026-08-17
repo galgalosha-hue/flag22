@@ -51,6 +51,7 @@ def main():
             pygame.time.wait(3000)
             state["is_window_open"] = False
 
+        pygame.display.update()
         screen.display(window)
 
 
@@ -72,7 +73,7 @@ def handle_user_events():
 
 def handle_user_button(key):
     whole_soldier = game_field.find_whole_soldier(gameField)
-    if key == consts.KEYS[2] and consts.SOLDIER_PLACMENT_X > 0:
+    if key == consts.KEYS[2] and consts.SOLDIER_PLACMENT_X > 0: #event key down doesn't work
         soldier.move_left(whole_soldier)
     elif key == consts.KEYS[3] and consts.SOLDIER_PLACMENT_X+20 < 500:
             soldier.move_right(whole_soldier)

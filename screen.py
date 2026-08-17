@@ -14,7 +14,7 @@ def display(window):
     draw_grass(window)
     draw_flag(window)
     draw_soldier(window)
-    pygame.display.update()
+
     return window
 
 
