@@ -3,11 +3,12 @@ import consts
 import game_field
 import screen
 
-def create_soldier():
+'''def create_soldier():
     soldier = pygame.image.load('soldier.png')
     soldier = pygame.transform.scale(soldier, consts.SOLDIER_SIZE)
     screen.display().blit(soldier, consts.SOLDIER_PLACMENT)
-    return soldier
+    pygame.display.update()
+    return soldier'''
 
 def place_soldier(game_field):
     for i in range(consts.NUM_OF_MINES):

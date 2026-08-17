@@ -21,6 +21,8 @@ def random_mines(game_field):
             game_field[rndm_num_1][rndm_num_2] = consts.MINE
             consts.mines.append((rndm_num_1*10, rndm_num_2*10))
 
+
+
 def flag_in_field(game_field):
     for i in range(consts.NUM_OF_MINES):
         for j in range(consts.NUM_OF_COLS):

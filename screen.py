@@ -4,8 +4,8 @@ from turtledemo.nim import SCREENWIDTH, SCREENHEIGHT
 import pygame
 import consts
 import random
-
 import game_field
+
 
 pygame.init()
 
@@ -56,12 +56,14 @@ def draw_flag(window):
     flag = pygame.image.load('flag.png')
     flag = pygame.transform.scale(flag, consts.FLAG_SIZE)
     window.blit(flag, consts.FLAG_PLACMENT)
+    pygame.display.update()
     return
 
 def draw_soldier(window):
     soldier = pygame.image.load('soldier.png')
     soldier = pygame.transform.scale(soldier, consts.SOLDIER_SIZE)
     window.blit(soldier, consts.SOLDIER_PLACMENT)
+    pygame.display.update()
     return
 
 '''def draw_explosion(window):
@@ -75,6 +77,7 @@ def draw_night_soldier(dark_window):
     night_soldier = pygame.image.load('soldier_nigth.png')
     night_soldier = pygame.transform.scale(night_soldier, consts.SOLDIER_SIZE)
     dark_window.blit(night_soldier, consts.SOLDIER_PLACMENT)
+    pygame.display.update()
     return
 
 def dark_mode():
