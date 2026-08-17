@@ -51,7 +51,7 @@ def draw_mines(window):
 def draw_flag(window):
     flag = pygame.image.load('flag.png')
     flag = pygame.transform.scale(flag, consts.FLAG_SIZE)
-    window.blit(flag, (460, 220))
+    window.blit(flag, consts.FLAG_PLACMENT)
     return
 
 def draw_soldier(window):
@@ -60,12 +60,19 @@ def draw_soldier(window):
     window.blit(soldier, consts.SOLDIER_PLACMENT)
     return
 
-def draw_explosion(window):
-    explosion = pygame.image.load('soldier.png')
-    soldier = pygame.transform.scale(soldier, consts.SOLDIER_SIZE)
-    window.blit(soldier, consts.SOLDIER_PLACMENT)
-    return
+'''def draw_explosion(window):
+    explosion = pygame.image.load('explotion.png')
+    explosion = pygame.transform.scale(explosion, consts.GRASS_SIZE)
+    window.blit(explosion, consts.explo_PLACMENT)
+    return'''
 
+
+
+def draw_night_soldier(window):
+    night_soldier = pygame.image.load('soldier_nigth.png')
+    night_soldier = pygame.transform.scale(night_soldier, consts.SOLDIER_SIZE)
+    window.blit(night_soldier, consts.SOLDIER_PLACMENT)
+    return
 
 
 
