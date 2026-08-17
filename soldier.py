@@ -35,15 +35,17 @@ def soldier_body():
     tummy_right = (s_x+20, s_y+20)
     return head_left, head_right, tummy_left, tummy_right
 
+#ALL MOTION FUNCTIONS DONT MOVE IN THE MATRIX
+
 def move_right(whole_soldier):
     for i in range(len(whole_soldier)):
-        for j in range(2):
+        for j in range(1,2):
             whole_soldier[i][j] = whole_soldier[i][j] + 1
     consts.SOLDIER_PLACMENT_X += consts.STEP
 
 def move_left(whole_soldier):
     for i in range(len(whole_soldier)):
-        for j in range(2):
+        for j in range(1,2):
             whole_soldier[i][j] = whole_soldier[i][j] - 1
     consts.SOLDIER_PLACMENT_X -= consts.STEP
 
