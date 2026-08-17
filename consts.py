@@ -50,10 +50,9 @@ mines = []
 FONT_NAME = "Calibri"
 LOSE_MESSAGE = "You Lost!"
 FONT_SIZE = int(0.1 * 500)
-LOSE_COLOR = (54, 00, 20)
 LOSE_LOCATION = \
     (0.2 * 500, 250 / 2 - (FONT_SIZE / 2))
 WIN_MESSAGE = "You Won!"
-WIN_COLOR = (89, 89, 89)
+COLOR = (255, 255, 255)
 WIN_LOCATION = \
     (0.2 * 500, 250 / 2 - (FONT_SIZE / 2))
