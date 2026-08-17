@@ -73,7 +73,6 @@ def handle_user_button(key):
     else:
         pass
 
-
 def handle_user_enter():
     #show other screen for 1 second
 

@@ -31,12 +31,7 @@ def calc_body(game_field):
 def calc_legs():
     count = 0
     legs = []
-    for i in range(consts.NUM_OF_MINES):
-        for j in range(consts.NUM_OF_COLS):
-            count += 1
-            if game_field[i][j] == consts.SOLDIER and 6<=count<=8:
-                legs.append([i, j])
-    return legs
+      return legs
 
 def calc_whole_soldier(game_field):
     whole_soldier = []
