@@ -40,6 +40,7 @@ def move_right(whole_soldier):
         for j in range(2):
             whole_soldier[i][j] = whole_soldier[i][j] + 1
     consts.SOLDIER_PLACMENT_X += consts.STEP
+    print(consts.SOLDIER_PLACMENT)
 
 def move_left(whole_soldier):
     for i in range(len(whole_soldier)):

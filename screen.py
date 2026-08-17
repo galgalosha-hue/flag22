@@ -60,7 +60,7 @@ def draw_flag(window):
 def draw_soldier(window):
     soldier = pygame.image.load('soldier.png')
     soldier = pygame.transform.scale(soldier, consts.SOLDIER_SIZE)
-    window.blit(soldier, consts.SOLDIER_PLACMENT)
+    window.blit(soldier, (consts.SOLDIER_PLACMENT_X, consts.SOLDIER_PLACMENT_Y))
     pygame.display.update()
     return
 
