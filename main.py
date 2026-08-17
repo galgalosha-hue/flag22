@@ -8,7 +8,7 @@ import time
 '''state = {
     "original_arrow": Screen.create_arrow(consts.ARROW_IMG),
     "rotated_arrow": None,
-    "is_bubble_fired": False,
+    "is_bubble_fired": False, !!!!!!!!!
     "bubbles_popping": [],
     "turns_left_to_add_row": consts.NUM_OF_TURNS_TO_ADD_ROW,
     "is_window_open": True,
@@ -26,7 +26,12 @@ state = {
 
 def main():
     pygame.init()
-    game_field.create()
+    global gameField
+    gameField = game_field.create()
+    global y
+    global x
+    x = consts.SOLDIER_PLACMENT_Y
+    y = consts.SOLDIER_PLACMENT_X
 
     while state["is_window_open"]:
 
@@ -42,6 +47,7 @@ def main():
             state["is_window_open"] = False
 
         screen.display()
+
 
 def handle_user_events():
     for event in pygame.event.get():
@@ -59,15 +65,15 @@ def handle_user_events():
                 handle_user_button(key)
 
 def handle_user_button(key):
-    whole_soldier = game_field.find_whole_soldier(game_field)
-    if key == pygame.K_LEFT and consts.SOLDIER_PLACMENT_X > 0:
+    whole_soldier = game_field.find_whole_soldier(gameField)
+    if key == consts.KEYS[2] and consts.SOLDIER_PLACMENT_X > 0:
         soldier.move_left(whole_soldier)
-    elif key == pygame.K_RIGHT and consts.SOLDIER_PLACMENT_X+20 < 500:
+    elif key == consts.KEYS[3] and consts.SOLDIER_PLACMENT_X+20 < 500:
             soldier.move_right(whole_soldier)
-    elif key == pygame.K_UP and consts.SOLDIER_PLACMENT_Y > 0:
+    elif key == consts.KEYS[0] and consts.SOLDIER_PLACMENT_Y > 0:
             soldier.move_up(whole_soldier)
-    elif key == pygame.K_DOWN and consts.SOLDIER_PLACMENT_Y+40 < 250:
-            soldier.move_down(whole_soldier)
+    elif key == consts.KEYS[1] and consts.SOLDIER_PLACMENT_Y+40 < 250:
+            soldier.move_down(whole_soldier, y)
     else:
         pass
 
@@ -100,7 +106,6 @@ def is_touching_mine(game_field):
             if i == j:
                 return True
     return False
-
 
 def is_lose():
     if is_touching_mine(game_field):
