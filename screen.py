@@ -92,6 +92,11 @@ def draw_lose_message(window):
     lose_img = font.render(consts.LOSE_MESSAGE, True, consts.LOSE_COLOR)
     window.blit(lose_img, consts.LOSE_LOCATION)
 
+def draw_win_message(window):
+    font = pygame.font.SysFont(consts.FONT_NAME, consts.FONT_SIZE)
+    win_img = font.render(consts.WIN_MESSAGE, True, consts.WIN_COLOR)
+    window.blit(win_img, consts.LOSE_LOCATION)
+
 
 
 
