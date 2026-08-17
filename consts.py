@@ -47,3 +47,14 @@ STEP = 10
 
 mines = []
 
+FONT_NAME = "Calibri"
+LOSE_MESSAGE = "You Lost!"
+LOSE_FONT_SIZE = int(0.15 * 500)
+LOSE_COLOR = (54, 00, 20)
+LOSE_LOCATION = \
+    (0.2 * 500, 250 / 2 - (LOSE_FONT_SIZE / 2))
+WIN_MESSAGE = "You Won!"
+WIN_FONT_SIZE = LOSE_FONT_SIZE
+WIN_COLOR = (89, 89, 89)
+WIN_LOCATION = \
+    (0.2 * 500, 250 / 2 - (WIN_FONT_SIZE / 2))
