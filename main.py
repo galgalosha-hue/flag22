@@ -34,14 +34,14 @@ def main():
 
         if is_lose():
             state["state"] = consts.LOSE_STATE
-            time.sleep(3)
+            pygame.time.wait(3000)
             state["is_window_open"] = False
         elif is_win():
             state["state"] = consts.WIN_STATE
-            time.sleep(3)
+            pygame.time.wait(3000)
             state["is_window_open"] = False
 
-        screen.draw_game(state)
+        screen.display()
 
 def handle_user_events():
     for event in pygame.event.get():
@@ -73,6 +73,7 @@ def handle_user_button(key):
 
 def handle_user_enter():
     #show other screen for 1 second
+    pygame.time.set_timer(screen.dark_mode(), 1000)
 
 def is_touching_flag():
     #if body in indexes at the same row as flags but the column is -1:
