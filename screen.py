@@ -78,14 +78,12 @@ def draw_night_soldier(dark_window):
     pygame.display.update()
     return
 
-def dark_mode():
-    dark_window = pygame.display.set_mode(consts.DISPLAY_SIZE)
-    pygame.display.set_caption('flag')
-    dark_window.fill(consts.BC_DARK)
+def dark_mode(window):
+    window.fill(consts.BC_DARK)
     pygame.display.flip() #here?
-    draw_grid(dark_window, )
-    draw_mines(dark_window)
-    draw_night_soldier(dark_window)
+    draw_grid(window, )
+    draw_mines(window)
+    draw_night_soldier(window)
     return window
 
 
