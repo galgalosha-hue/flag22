@@ -44,7 +44,7 @@ def draw_grid(TILE_SIZE, window):
 def draw_mines(window):
     mine = pygame.image.load('mine.png')
     mine = pygame.transform.scale(mine, consts.GRASS_SIZE)
-    for index in consts.MINES_PLACMENT:
+    for index in consts.mines:
         window.blit(mine, index)
         pygame.display.update()
     return
