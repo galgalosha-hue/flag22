@@ -88,7 +88,7 @@ def dark_mode(window):
 
 
 def draw_lose_message(window):
-    font = pygame.font.SysFont(consts.FONT_NAME, consts.LOSE_FONT_SIZE)
+    font = pygame.font.SysFont(consts.FONT_NAME, consts.FONT_SIZE)
     lose_img = font.render(consts.LOSE_MESSAGE, True, consts.LOSE_COLOR)
     window.blit(lose_img, consts.LOSE_LOCATION)
 
