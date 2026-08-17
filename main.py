@@ -5,8 +5,6 @@ import screen
 import soldier
 import time
 
-from soldier import calc_whole_soldier
-
 '''state = {
     "original_arrow": Screen.create_arrow(consts.ARROW_IMG),
     "rotated_arrow": None,
@@ -61,7 +59,7 @@ def handle_user_events():
                 handle_user_button(key)
 
 def handle_user_button(key):
-    whole_soldier = calc_whole_soldier(game_field)
+    whole_soldier = game_field.find_whole_soldier(game_field)
     if key == pygame.K_LEFT and consts.SOLDIER_PLACMENT_X > 0:
         soldier.move_left(whole_soldier)
     elif key == pygame.K_RIGHT and consts.SOLDIER_PLACMENT_X+20 < 500:
@@ -79,10 +77,7 @@ def handle_user_enter():
 def is_touching_flag():
     #if body in indexes at the same row as flags but the column is -1
     #if body indexes (x,y) == flag placement
-    body = soldier.calc_body(game_field)
-    '''for i in body:
-        for j in range (len(body[i])):
-            if body[i][j] =='''
+    body = game_field.find_body(game_field)
     for i in range(len(body)):
         if i%2 != 0:
             for j in range(len(body[i])):
@@ -90,9 +85,9 @@ def is_touching_flag():
                     if
 
 def is_touching_mine(game_field):
-    #if leg column is -1 or +1 of the minse OR the column is the same and the row is -1
+    #if leg column is -1 or +1 of the mines OR the column is the same and the row is -1
     #if leg indexes (x,y) == mine placement
-    soldier.calc_legs(game_field)
+    game_field.calc_legs(game_field)
     for i in range(len(game_field)):
         for j in game_field[i]:
 
