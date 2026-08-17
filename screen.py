@@ -71,7 +71,6 @@ def draw_soldier(window):
     return'''
 
 
-
 def draw_night_soldier(dark_window):
     night_soldier = pygame.image.load('soldier_nigth.png')
     night_soldier = pygame.transform.scale(night_soldier, consts.SOLDIER_SIZE)
