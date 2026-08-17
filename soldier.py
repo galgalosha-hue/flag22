@@ -55,7 +55,7 @@ def move_up(whole_soldier):
             whole_soldier[i][j] = whole_soldier[i][j] - 1
     consts.SOLDIER_PLACMENT_Y -= consts.STEP
 
-def move_down(whole_soldier, y):
+def move_down(whole_soldier):
     for i in range(len(whole_soldier)):
         for j in range(1):
             whole_soldier[i][j] = whole_soldier[i][j] + 1
