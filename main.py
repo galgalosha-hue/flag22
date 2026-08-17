@@ -46,13 +46,15 @@ def main():
             state["state"] = consts.LOSE_STATE
             print("LOSE")
             screen.draw_lose_message()
-            pygame.time.wait(3000)
+            #pygame.time.wait(3000)
+            time.sleep(3)
             state["is_window_open"] = False
         elif is_win():
             state["state"] = consts.WIN_STATE
             print("WIN")
             screen.draw_win_message()
-            pygame.time.wait(3000)
+            #pygame.time.wait(3000)
+            time.sleep(3)
             state["is_window_open"] = False
 
         pygame.display.update()
@@ -84,34 +86,21 @@ def handle_user_button(key):
     elif key == consts.KEYS[0] and consts.SOLDIER_PLACMENT_Y > 0:
             soldier.move_up(whole_soldier)
     elif key == consts.KEYS[1] and consts.SOLDIER_PLACMENT_Y+40 < 250:
-            soldier.move_down(whole_soldier, y)
+            soldier.move_down(whole_soldier)
     else:
         pass
 
 def handle_user_enter():
-    #show other screen for 1 second
+    #DOESN'T SHOW DARK SIDE
     screen.dark_mode()
 
 def is_touching_flag():
-    #if body in indexes at the same row as flags but the column is -1:
-    '''body = game_field.find_body(game_field)
-    for i in range(len(body)):
-        if i%2 != 0:
-            for j in range(len(body[i])):
-                if j == 0:
-                    if'''
-    #if body indexes (x,y) == flag placement:
     for i in soldier.soldier_body():
         if i == consts.FLAG_PLACMENT:
             return True
     return False
 
 def is_touching_mine(game_field):
-    #if leg column is -1 or +1 of the mines OR the column is the same and the row is -1:
-    '''game_field.calc_legs(game_field)
-    for i in range(len(game_field)):
-        for j in game_field[i]:'''
-    #if leg indexes (x,y) == mine placement:
     for i in soldier.leg_placment():
         for j in consts.mines:
             if i == j:
