@@ -9,11 +9,8 @@ import game_field
 
 pygame.init()
 
-def display():
-    window = pygame.display.set_mode(consts.DISPLAY_SIZE)
-    pygame.display.set_caption('flag')
-    window.fill(consts.BACKGROUND_COLOR)
-    pygame.display.flip() #here?
+def display(window):
+     #here?
     draw_grass(window)
     draw_flag(window)
     draw_soldier(window)

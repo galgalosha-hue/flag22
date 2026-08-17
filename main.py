@@ -33,6 +33,11 @@ def main():
     x = consts.SOLDIER_PLACMENT_Y
     y = consts.SOLDIER_PLACMENT_X
 
+    window = pygame.display.set_mode(consts.DISPLAY_SIZE)
+    pygame.display.set_caption('flag')
+    window.fill(consts.BACKGROUND_COLOR)
+    pygame.display.flip()
+
     while state["is_window_open"]:
 
         handle_user_events()
@@ -46,7 +51,7 @@ def main():
             pygame.time.wait(3000)
             state["is_window_open"] = False
 
-        screen.display()
+        screen.display(window)
 
 
 def handle_user_events():
@@ -63,6 +68,7 @@ def handle_user_events():
                 pass
             else:
                 handle_user_button(key)
+                continue
 
 def handle_user_button(key):
     whole_soldier = game_field.find_whole_soldier(gameField)
