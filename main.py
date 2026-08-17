@@ -44,10 +44,12 @@ def main():
 
         if is_lose():
             state["state"] = consts.LOSE_STATE
+            screen.draw_lose_message()
             pygame.time.wait(3000)
             state["is_window_open"] = False
         elif is_win():
             state["state"] = consts.WIN_STATE
+            screen.draw_win_message()
             pygame.time.wait(3000)
             state["is_window_open"] = False
 
