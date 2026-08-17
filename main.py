@@ -78,6 +78,7 @@ def handle_user_enter():
 
 def is_touching_flag():
     #if body in indexes at the same row as flags but the column is -1
+    #if body indexes (x,y) == flag placement
     body = soldier.calc_body(game_field)
     '''for i in body:
         for j in range (len(body[i])):
@@ -90,6 +91,7 @@ def is_touching_flag():
 
 def is_touching_mine(game_field):
     #if leg column is -1 or +1 of the minse OR the column is the same and the row is -1
+    #if leg indexes (x,y) == mine placement
     soldier.calc_legs(game_field)
     for i in range(len(game_field)):
         for j in game_field[i]:
