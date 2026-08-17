@@ -30,6 +30,7 @@ while window:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             window = False'''
+
 def draw_grid(TILE_SIZE, window):
     for x in range(TILE_SIZE, SCREENWIDTH, TILE_SIZE):
         pygame.draw.line(window, consts.BACKGROUND_COLOR, (x, 0), (x, 250))
@@ -43,10 +44,10 @@ def draw_grid(TILE_SIZE, window):
 def draw_mines(window):
     mine = pygame.image.load('mine.png')
     mine = pygame.transform.scale(mine, consts.GRASS_SIZE)
-    for index in consts.mines:
+    for index in consts.MINES_PLACMENT:
         window.blit(mine, index)
         pygame.display.update()
-        return
+    return
 
 def draw_flag(window):
     flag = pygame.image.load('flag.png')

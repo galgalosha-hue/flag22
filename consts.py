@@ -43,4 +43,9 @@ for time in range(22):
 
 TILE_SIZE = 10
 STEP = 10
-mines = []
+MINES_PLACMENT = []
+for J in range(22):
+    MINE_PLACMENT_X = random.randrange(0, 50)
+    MINE_PLACMENT_Y = random.randrange(0, 25)
+    MINE_PLACMENT = (MINE_PLACMENT_X*10, MINE_PLACMENT_Y*10)
+    MINES_PLACMENT.append(MINE_PLACMENT)
