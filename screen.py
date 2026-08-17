@@ -96,7 +96,8 @@ def draw_win_message():
                  consts.WIN_COLOR, consts.WIN_LOCATION)
 
 
-def draw_message(message, font_size, color, location, window):
+def draw_message(message, font_size, color, location):
+    global window
     font = pygame.font.SysFont(consts.FONT_NAME, font_size)
     text_img = font.render(message, True, color)
     window.blit(text_img, location)

@@ -32,7 +32,7 @@ def main():
     global x
     x = consts.SOLDIER_PLACMENT_Y
     y = consts.SOLDIER_PLACMENT_X
-
+    global window
     window = pygame.display.set_mode(consts.DISPLAY_SIZE)
     pygame.display.set_caption('flag')
     window.fill(consts.BACKGROUND_COLOR)
