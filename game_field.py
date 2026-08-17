@@ -21,7 +21,16 @@ def random_mines(game_field):
             game_field[rndm_num_1][rndm_num_2] = consts.MINE
             consts.mines.append((rndm_num_1*10, rndm_num_2*10))
 
-
+'''def mine_placment():
+    all_mines_place = []
+    for item in consts.mines:
+        m_x, m_y = item
+        up_left = (m_x, m_y)
+        up_right = (m_x+30, m_y)
+        down_left = (m_x, m_y+10)
+        down_right = (m_x+30, m_y+10)
+        all_mines_place.append([up_left, up_right, down_left, down_right])
+        return  all_mines_place'''
 
 def flag_in_field(game_field):
     for i in range(consts.NUM_OF_MINES):
