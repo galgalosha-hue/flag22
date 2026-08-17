@@ -15,6 +15,7 @@ SOLDIER = "S"
 
 KEYS = ["up", "down", "left", "right"]
 
+BC_DARK = (72, 72, 72)
 BACKGROUND_COLOR = (00 ,33 ,00)
 DISPLAY_SIZE = (500, 250)
 
